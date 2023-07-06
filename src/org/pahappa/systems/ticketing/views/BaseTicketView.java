@@ -6,7 +6,7 @@ public interface BaseTicketView {
     void displayMenu();
 
     // Create a new ticket
-    void createTicket();
+    void createTicket() throws Exception;
 
     // Get all tickets
     void getAllTickets();
