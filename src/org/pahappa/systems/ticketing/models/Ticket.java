@@ -14,13 +14,13 @@ public class Ticket {
     private String tktNumber = null;
     private String customerID;
     private String contact;
+    private String agentID;
     private String issueDesc;
     private String tktPriority;
     private TicketCategory tktCategory;
-    private String agentID;
 
     public String getAgentID() {
-        return tktPriority;
+        return agentID;
     }
 
     public void setAgentID(String agentID) {
