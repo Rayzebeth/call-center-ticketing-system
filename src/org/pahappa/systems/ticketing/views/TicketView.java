@@ -156,13 +156,13 @@ public class TicketView implements BaseTicketView {
         List<Ticket> tktlist = ticketService.getAllTickets();
         for(Ticket ticket1: tktlist){
             System.out.println("TICKETNO: " + ticket1.getTktNumber());
-            System.out.println("AGENTID: "+ticket1.agentID);
-            System.out.println("CUSTOMERID: "+ticket1.customerID);
-            System.out.println("CONTACT: "+ticket1.contact);
-            System.out.println("ISSUE: "+ticket1.issueDesc);
-            System.out.println("TICKETCATEGORY: "+ticket1.tktCategory);
-            System.out.println("PRIORITY: "+ticket1.tktPriority);
-            System.out.println("STATUS: "+ticket1.status);
+            System.out.println("AGENTID: "+ticket1.getAgentID());
+            System.out.println("CUSTOMERID: "+ticket1.getCustomerID());
+            System.out.println("CONTACT: "+ticket1.getContact());
+            System.out.println("ISSUE: "+ticket1.getIssueDesc());
+            System.out.println("TICKETCATEGORY: "+ticket1.getTktCategory());
+            System.out.println("PRIORITY: "+ticket1.getTktPriority());
+            System.out.println("STATUS: "+ticket1.getStatus());
             System.out.println("\n");
         }
         
@@ -193,18 +193,16 @@ public class TicketView implements BaseTicketView {
         List<Ticket> tktOfStatus = new ArrayList<>();
         tktOfStatus = ticketService.getTicketsOfStatus(stat1);
         for(Ticket ticOfStatus: tktOfStatus){
-            System.out.println("TICKETNO: " + ticOfStatus.tktNumber);
-            System.out.println("AGENTID: "+ticOfStatus.agentID);
-            System.out.println("CUSTOMERID: "+ticOfStatus.customerID);
-            System.out.println("CONTACT: "+ticOfStatus.contact);
-            System.out.println("ISSUE: "+ticOfStatus.issueDesc);
-            System.out.println("TICKETCATEGORY: "+ticOfStatus.tktCategory);
-            System.out.println("PRIORITY: "+ticOfStatus.tktPriority);
-            System.out.println("STATUS: "+ticOfStatus.status);
+            System.out.println("TICKETNO: " + ticOfStatus.getTktNumber());
+            System.out.println("AGENTID: "+ticOfStatus.getAgentID());
+            System.out.println("CUSTOMERID: "+ticOfStatus.getCustomerID());
+            System.out.println("CONTACT: "+ticOfStatus.getContact());
+            System.out.println("ISSUE: "+ticOfStatus.getIssueDesc());
+            System.out.println("TICKETCATEGORY: "+ticOfStatus.getTktCategory());
+            System.out.println("PRIORITY: "+ticOfStatus.getTktPriority());
+            System.out.println("STATUS: "+ticOfStatus.getStatus());
             System.out.println("\n");
         }
-
-        
 
     }
 

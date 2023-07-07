@@ -29,7 +29,7 @@ public class TicketServiceImpl implements TicketService {
     public List<Ticket> getTicketsOfStatus(TicketStatus ticketStatus) {
         List<Ticket> tktStatus = new ArrayList<>();
         for(Ticket ticket: tkt ){
-            if(ticket.status.equals(ticketStatus)){
+            if(ticket.getStatus().equals(ticketStatus)){
                 tktStatus.add(ticket);
             }
         }
