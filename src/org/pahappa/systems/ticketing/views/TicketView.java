@@ -140,7 +140,7 @@ public class TicketView implements BaseTicketView {
             }
             
             Ticket ticket = new Ticket(null,id,contact,tcat,issue,prior,stat);
-            System.out.println(ticket.customerID + " "+ ticket.contact +" "+tcat+" "+issue+" "+prior+" "+stat);
+            //System.out.println(ticket.customerID + " "+ ticket.contact +" "+tcat+" "+issue+" "+prior+" "+stat);
             ticketService.createTicket(ticket);
             
         

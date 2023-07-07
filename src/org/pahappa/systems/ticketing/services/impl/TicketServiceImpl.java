@@ -16,7 +16,7 @@ public class TicketServiceImpl implements TicketService {
         SecureRandom rand = new SecureRandom();
         int upper = 1000;
         String random = ((Integer)rand.nextInt(upper)).toString();
-        ticket.tktNumber = random;
+        ticket.setTktNumber(random);
         tkt.add(ticket);
     }
 
