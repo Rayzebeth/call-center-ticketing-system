@@ -17,8 +17,9 @@ public class Ticket {
     public String issueDesc;
     public String tktPriority;
     public TicketCategory tktCategory;
+    public String agentID;
 
-    public Ticket(String tktNumber, String customerID, String contact, TicketCategory tktCategory , String issueDesc, String tktPriority, TicketStatus status){
+    public Ticket(String tktNumber, String customerID, String contact, TicketCategory tktCategory , String issueDesc, String tktPriority, TicketStatus status, String agentID){
         this.tktNumber = tktNumber;
         this.customerID = customerID;
         this.contact = contact;
@@ -26,5 +27,6 @@ public class Ticket {
         this.tktPriority = tktPriority;
         this.status = status;
         this.tktCategory = tktCategory;
+        this.agentID = agentID;
     }
 }

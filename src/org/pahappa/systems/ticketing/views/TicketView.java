@@ -138,9 +138,11 @@ public class TicketView implements BaseTicketView {
                     break;
                 }
             }
+            System.out.print("Enter AgentID :");
+            String agntID = sc.nextLine();
             
-            Ticket ticket = new Ticket(null,id,contact,tcat,issue,prior,stat);
-            System.out.println(ticket.customerID + " "+ ticket.contact +" "+tcat+" "+issue+" "+prior+" "+stat);
+            Ticket ticket = new Ticket(null,id,contact,tcat,issue,prior,stat,agntID);
+            //System.out.println(ticket.customerID + " "+ ticket.contact +" "+tcat+" "+issue+" "+prior+" "+stat);
             ticketService.createTicket(ticket);
             
         

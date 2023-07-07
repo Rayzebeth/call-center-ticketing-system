@@ -10,7 +10,7 @@ import java.security.SecureRandom;
 
 public class TicketServiceImpl implements TicketService {
 
-    List<Ticket> tkt = new ArrayList<Ticket>();
+    List<Ticket> tkt = new ArrayList<>(); 
     @Override
     public void createTicket(Ticket ticket) {
         SecureRandom rand = new SecureRandom();
@@ -18,7 +18,7 @@ public class TicketServiceImpl implements TicketService {
         String random = ((Integer)rand.nextInt(upper)).toString();
         ticket.tktNumber = random;
         tkt.add(ticket);
-    }
+    } 
 
     @Override
     public List<Ticket> getAllTickets() {
