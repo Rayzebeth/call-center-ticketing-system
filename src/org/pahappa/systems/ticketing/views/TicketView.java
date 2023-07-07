@@ -6,6 +6,8 @@ import org.pahappa.systems.ticketing.models.Ticket;
 import org.pahappa.systems.ticketing.constants.TicketStatus;
 import org.pahappa.systems.ticketing.constants.TicketCategory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TicketView implements BaseTicketView {
@@ -66,6 +68,8 @@ public class TicketView implements BaseTicketView {
     public void createTicket(){
         Scanner sc = new Scanner(System.in);
             System.out.println("******ENTER ALL INFORMATION CORRECTLY***");
+            System.out.print("Enter AgentID :");
+            String agntID = sc.nextLine();
             System.out.print("Enter Customer ID :");
             String id = sc.nextLine();
             System.out.print("Enter Customer Contact :");
@@ -138,8 +142,7 @@ public class TicketView implements BaseTicketView {
                     break;
                 }
             }
-            System.out.print("Enter AgentID :");
-            String agntID = sc.nextLine();
+            
             
             Ticket ticket = new Ticket(null,id,contact,tcat,issue,prior,stat,agntID);
             //System.out.println(ticket.customerID + " "+ ticket.contact +" "+tcat+" "+issue+" "+prior+" "+stat);
@@ -150,7 +153,18 @@ public class TicketView implements BaseTicketView {
 
     @Override
     public void getAllTickets() {
-
+        List<Ticket> tktlist = ticketService.getAllTickets();
+        for(Ticket ticket1: tktlist){
+            System.out.println("TICKETNO: " + ticket1.tktNumber);
+            System.out.println("AGENTID: "+ticket1.agentID);
+            System.out.println("CUSTOMERID: "+ticket1.customerID);
+            System.out.println("CONTACT: "+ticket1.contact);
+            System.out.println("ISSUE: "+ticket1.issueDesc);
+            System.out.println("TICKETCATEGORY: "+ticket1.tktCategory);
+            System.out.println("PRIORITY: "+ticket1.tktPriority);
+            System.out.println("STATUS: "+ticket1.status);
+        }
+        
     }
 
     @Override
