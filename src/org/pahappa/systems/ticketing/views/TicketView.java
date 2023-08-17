@@ -232,8 +232,7 @@ public class TicketView implements BaseTicketView {
 
     @Override
     public void deleteTicket() {
-        try{
-            System.out.println("Enter ticket Number to delete: ");
+        System.out.println("Enter ticket Number to delete: ");
         Scanner sc3 = new Scanner(System.in);
         String input3 = sc3.nextLine();
 
@@ -250,21 +249,19 @@ public class TicketView implements BaseTicketView {
                 System.out.println("STATUS: "+uticket.getStatus());
                 System.out.println("\n");  
 
-                System.out.print("Confirm delete(Enter 2): ");
-                if(sc3.nextInt()==2){
-                   int index = ticketDelete.indexOf(uticket);
-                     ticketService.deleteTicket(index);
-                 }else {
-                    continue;
-                }
-                // int index= ticketDelete.indexOf(uticket);
-                // ticketService.deleteTicket(index);
+                int index= ticketDelete.indexOf(uticket);
+                ticketService.deleteTicket(index);
 
             }
         }
-        //  
-        }catch(Exception e){}
-        
+        // for(Ticket ticket: ticketDelete){
+        //     System.out.print("Confirm delete(Enter 2): ");
+        // if(sc3.nextInt()==2){
+        //     int index = ticketDelete.indexOf(ticket);
+        //     ticketService.deleteTicket(index);
+        // }else {
+        //     continue;
+        //}
         
            
     }
