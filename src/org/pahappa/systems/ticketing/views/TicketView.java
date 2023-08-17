@@ -232,6 +232,41 @@ public class TicketView implements BaseTicketView {
 
     @Override
     public void deleteTicket() {
-    
+        try{
+            System.out.println("Enter ticket Number to delete: ");
+        Scanner sc3 = new Scanner(System.in);
+        String input3 = sc3.nextLine();
+
+        List<Ticket> ticketDelete = ticketService.getAllTickets();
+        for(Ticket uticket:ticketDelete){
+            if(input3.equals(uticket.getTktNumber())){
+                System.out.println("TICKETNO: " + uticket.getTktNumber());
+                System.out.println("AGENTID: "+uticket.getAgentID());
+                System.out.println("CUSTOMERID: "+uticket.getCustomerID());
+                System.out.println("CONTACT: "+uticket.getContact());
+                System.out.println("ISSUE: "+uticket.getIssueDesc());
+                System.out.println("TICKETCATEGORY: "+uticket.getTktCategory());
+                System.out.println("PRIORITY: "+uticket.getTktPriority());
+                System.out.println("STATUS: "+uticket.getStatus());
+                System.out.println("\n");  
+
+                System.out.print("Confirm delete(Enter 2): ");
+                if(sc3.nextInt()==2){
+                   int index = ticketDelete.indexOf(uticket);
+                     ticketService.deleteTicket(index);
+                 }else {
+                    continue;
+                }
+                // int index= ticketDelete.indexOf(uticket);
+                // ticketService.deleteTicket(index);
+
+            }
+        }
+        //  
+        }catch(Exception e){}
+        
+        
+           
     }
-}
+ }
+
